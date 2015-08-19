@@ -2,8 +2,9 @@
   "name": "starwars-names",
   "version": "1.4.0",
   "description": "Get random Star Wars names",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src/index.js -o dist/index.js",
     "test": "mocha src/index.test.js -w"
   },
   "repository": {
@@ -25,6 +26,7 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
+    "babel": "5.8.21",
     "chai": "3.2.0",
     "mocha": "2.2.5"
   }
