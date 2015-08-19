@@ -1,9 +1,9 @@
-var expect = require('chai').expect;
-var starWars = require('./index');
+import {expect} from 'chai';
+import starWars from './index';
 
-describe('starwars-names', function() {
-  describe('all', function() {
-    it('should be an array of strings', function() {
+describe('starwars-names', () => {
+  describe('all', () => {
+    it('should be an array of strings', () => {
       expect(starWars.all).to.satisfy(isArrayOfStrings);
 
       function isArrayOfStrings(array) {
@@ -13,13 +13,13 @@ describe('starwars-names', function() {
       }
     });
 
-    it('should contain `Luke Skywalker`', function() {
+    it('should contain `Luke Skywalker`', () => {
       expect(starWars.all).to.include('Luke Skywalker');
     });
   });
 
-  describe('random', function() {
-    it('should return a random item from the starWars.all', function() {
+  describe('random', () => {
+    it('should return a random item from the starWars.all', () => {
       var randomItem = starWars.random();
       expect(starWars.all).to.include(randomItem);
     });
