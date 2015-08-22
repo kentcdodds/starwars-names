@@ -12,8 +12,10 @@ function random(number) {
   if (number === undefined) {
     return getRandomItem();
   } else {
-    return new Array(number).map(function() {
-      return getRandomItem();
-    });
+    var randomItems = [];
+    for (var i = 0; i < number; i++) {
+      randomItems.push(getRandomItem());
+    }
+    return randomItems;
   }
 }
