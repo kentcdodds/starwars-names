@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "commit": "git-cz",
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "test": "mocha src/index.test.js -w",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -41,7 +42,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:single"
+      "pre-commit": "npm run test:single && npm run check-coverage"
     }
   }
 }
