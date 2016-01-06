@@ -8,11 +8,12 @@
     "build": "babel src/index.js -o dist/index.js",
     "postbuild": "cp src/starwars-names.json dist/starwars-names.json",
     "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "report-coverage": "nyc report --reporter=text-lcov | codecov",
     "start": "npm run test",
-    "test": "mocha src/index.test.js -w --compilers js:babel/register",
-    "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel/register",
+    "test": "ava src/**/*.test.js --require babel-register",
+    "test:watch": "nodemon -w src --exec 'npm t -- --verbose'",
+    "test:cover": "nyc --reporter=lcov --reporter=text npm t",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -34,14 +35,18 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
-    "babel": "5.8.21",
-    "chai": "3.3.0",
+    "ava": "0.9.1",
+    "babel-core": "6.3.26",
+    "babel-preset-es2015": "6.3.13",
+    "babel-preset-stage-2": "6.3.13",
+    "babel-register": "6.3.13",
     "codecov.io": "0.1.6",
     "commitizen": "1.0.5",
     "cz-conventional-changelog": "1.1.2",
     "ghooks": "0.3.2",
-    "istanbul": "0.3.21",
-    "mocha": "2.2.5",
+    "is_js": "0.7.6",
+    "nodemon": "1.8.1",
+    "nyc": "5.3.0",
     "semantic-release": "4.3.5"
   },
   "czConfig": {
@@ -49,7 +54,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:single && npm run check-coverage"
+      "pre-commit": "npm run test && npm run check-coverage"
     }
   }
 }
