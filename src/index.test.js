@@ -1,35 +1,30 @@
-import {expect} from 'chai';
-import starWars from './index';
+import starWars from './index'
+import test from 'ava'
+import is from 'is_js'
 
-describe('starwars-names', function() {
-  describe('all', function() {
-    it('should be an array of strings', function() {
-      expect(starWars.all).to.satisfy(isArrayOfStrings);
+test('all is an array of strings', t => {
+  t.true(
+    starWars.all.every(item => typeof item === 'string')
+  )
+})
 
-      function isArrayOfStrings(array) {
-        return array.every(function(item) {
-          return typeof item === 'string';
-        });
-      }
-    });
+test(`all should contain 'Luke Skywalker'`, t => {
+  t.true(
+    is.inArray('Luke Skywalker', starWars.all)
+  )
+})
 
-    it('should contain `Luke Skywalker`', function() {
-      expect(starWars.all).to.include('Luke Skywalker');
-    });
-  });
+test('random should return a random item from the starWars.all', t => {
+  t.true(
+    is.inArray(starWars.random(), starWars.all)
+  )
+})
 
-  describe('random', function() {
-    it('should return a random item from the starWars.all', function() {
-      var randomItem = starWars.random();
-      expect(starWars.all).to.include(randomItem);
-    });
+test('random should return an array of random items when passed a number', t => {
+  const items = starWars.random(3)
+  t.true(items.length === 3)
+  t.true(
+    items.every(item => is.inArray(item, starWars.all))
+  )
+})
 
-    it('should return an array of random items if passed a number', function() {
-      var randomItems = starWars.random(3);
-      expect(randomItems).to.have.length(3);
-      randomItems.forEach(function(item) {
-        expect(starWars.all).to.include(item);
-      });
-    });
-  });
-});
