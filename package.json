@@ -4,15 +4,18 @@
   "description": "Get random Star Wars names",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist && mkdir dist",
-    "build": "babel src/index.js -o dist/index.js",
-    "postbuild": "cp src/starwars-names.json dist/starwars-names.json",
     "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "start": "npm run test",
-    "test": "mocha src/index.test.js -w --compilers js:babel/register",
-    "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel/register",
+    "watch:test": "npm t -- --watch",
+    "test": "mocha src/index.test.js --compilers js:babel-register",
+    "cover": "nyc npm t",
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
+    "build:umd": "webpack --output-filename index.umd.js",
+    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -24,6 +27,10 @@
     "star",
     "wars"
   ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
   "bugs": {
@@ -34,22 +41,36 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
-    "babel": "5.8.21",
-    "chai": "3.3.0",
-    "codecov.io": "0.1.6",
-    "commitizen": "1.0.5",
-    "cz-conventional-changelog": "1.1.2",
-    "ghooks": "0.3.2",
-    "istanbul": "0.3.21",
-    "mocha": "2.2.5",
-    "semantic-release": "4.3.5"
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
+    "babel-cli": "6.7.5",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.6.0",
+    "babel-preset-stage-2": "6.5.0",
+    "babel-register": "6.7.2",
+    "chai": "3.5.0",
+    "codecov": "1.0.1",
+    "commitizen": "2.7.6",
+    "cz-conventional-changelog": "1.1.5",
+    "ghooks": "1.2.1",
+    "json-loader": "0.5.4",
+    "mocha": "2.4.5",
+    "npm-run-all": "1.7.0",
+    "nyc": "6.4.0",
+    "rimraf": "2.5.2",
+    "semantic-release": "^4.2.1",
+    "webpack": "1.13.0"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:single && npm run check-coverage"
+      "pre-commit": "npm run cover && npm run check-coverage"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   }
 }
