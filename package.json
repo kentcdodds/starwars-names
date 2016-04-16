@@ -7,8 +7,8 @@
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "test": "mocha src/index.test.js -w",
-    "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js",
+    "watch:test": "mocha src/index.test.js -w",
+    "test": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -30,21 +30,21 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
-    "chai": "3.2.0",
-    "codecov.io": "0.1.6",
-    "commitizen": "1.0.4",
-    "cz-conventional-changelog": "1.1.0",
-    "ghooks": "0.3.2",
-    "istanbul": "0.3.18",
-    "mocha": "2.2.5",
+    "chai": "3.5.0",
+    "codecov": "1.0.1",
+    "commitizen": "2.7.6",
+    "cz-conventional-changelog": "1.1.5",
+    "ghooks": "1.2.1",
+    "istanbul": "0.4.3",
+    "mocha": "2.4.5",
     "semantic-release": "^4.2.1"
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:single && npm run check-coverage"
+      "pre-commit": "npm run test && npm run check-coverage"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
   }
 }
