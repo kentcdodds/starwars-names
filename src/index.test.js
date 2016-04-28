@@ -32,4 +32,20 @@ describe('starwars-names', function() {
       });
     });
   });
+    describe('firstNameBegWith',function(){
+        it('should be an array of strings with first name beginning with passed letter', function () {
+            var names = starWars.firstNameBegWith('a');
+            names.forEach(function(item){
+                expect(starWars.all).to.include(item);
+            });
+        });
+    });
+    describe('lastNameBegWith',function(){
+        it('should be an array of strings with last name beginning with passed letter', function () {
+            var names = starWars.lastNameBegWith('a');
+            names.forEach(function(item){
+                expect(starWars.all).to.include(item);
+            });
+        });
+    });
 });
