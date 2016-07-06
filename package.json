@@ -4,7 +4,7 @@
   "description": "Get random Star Wars names",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint src"
   },
@@ -29,6 +29,22 @@
     "chai": "3.5.0",
     "eslint": "3.2.0",
     "eslint-config-kentcdodds": "^9.0.0",
-    "mocha": "3.0.0"
+    "mocha": "3.0.0",
+    "nyc": "7.1.0"
+  },
+  "nyc": {
+    "all": true,
+    "check-coverage": true,
+    "branches": 100,
+    "function": 100,
+    "lines": 100,
+    "statements": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "include": [
+      "src"
+    ]
   }
 }
