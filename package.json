@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/kentcdodds/starwars-names/issues"
   },
-  "homepage": "https://github.com/kentcdodds/starwars-names#readme"
+  "homepage": "https://github.com/kentcdodds/starwars-names#readme",
+  "dependencies": {
+    "unique-random-array": "1.0.0"
+  }
 }
