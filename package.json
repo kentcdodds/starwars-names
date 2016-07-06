@@ -4,7 +4,8 @@
   "description": "Get random Star Wars names",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
+    "watch:test": "mocha --watch",
     "lint": "eslint src"
   },
   "repository": {
@@ -25,7 +26,9 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
+    "chai": "3.5.0",
     "eslint": "3.2.0",
-    "eslint-config-kentcdodds": "^9.0.0"
+    "eslint-config-kentcdodds": "^9.0.0",
+    "mocha": "3.0.0"
   }
 }
