@@ -1,6 +1,6 @@
 {
   "name": "starwars-names",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "Get random Star Wars names",
   "main": "dist/index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "watch:test": "mocha --watch",
     "lint": "eslint src",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "release": "semantic-release pre && npm publish && semantic-release post",
     "validate": "npm-run-all --parallel test lint build"
   },
   "repository": {
@@ -52,6 +53,7 @@
     "npm-run-all": "2.3.0",
     "nyc": "7.1.0",
     "rimraf": "2.5.4",
+    "semantic-release": "4.3.5",
     "webpack": "1.13.1"
   },
   "nyc": {
