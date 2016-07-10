@@ -2,12 +2,14 @@
   "name": "starwars-names",
   "version": "1.0.0",
   "description": "Get random Star Wars names",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "test": "nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint src",
-    "validate": "npm-run-all --parallel test lint"
+    "validate": "npm-run-all --parallel test lint build"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,9 @@
   "keywords": [
     "random",
     "star wars"
+  ],
+  "files": [
+    "dist"
   ],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
@@ -27,13 +32,16 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "6.11.4",
+    "babel-preset-es2015": "6.9.0",
     "chai": "3.5.0",
     "eslint": "3.2.0",
     "eslint-config-kentcdodds": "^9.0.0",
     "ghooks": "1.3.2",
     "mocha": "3.0.0",
     "npm-run-all": "2.3.0",
-    "nyc": "7.1.0"
+    "nyc": "7.1.0",
+    "rimraf": "2.5.4"
   },
   "nyc": {
     "all": true,
@@ -48,6 +56,11 @@
     ],
     "include": [
       "src"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
     ]
   },
   "config": {
