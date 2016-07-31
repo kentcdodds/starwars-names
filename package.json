@@ -55,6 +55,7 @@
     "mocha": "3.0.0",
     "npm-run-all": "2.3.0",
     "nyc": "7.1.0",
+    "opt-cli": "1.5.1",
     "rimraf": "2.5.4",
     "semantic-release": "4.3.5",
     "validate-commit-msg": "2.6.1",
@@ -97,8 +98,8 @@
       "path": "cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run validate",
-      "commit-msg": "validate-commit-msg"
+      "pre-commit": "opt --in pre-commit --exec \"npm run validate\"",
+      "commit-msg": "opt --in commit-msg --exec \"validate-commit-msg\""
     }
   }
 }
