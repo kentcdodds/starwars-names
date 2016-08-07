@@ -18,7 +18,7 @@
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "validate": "npm run cover && npm run check-coverage",
     "setup": "npm install && npm run validate",
-    "setup:fem": "git checkout FEM/10.1-docs && npm install && npm run validate && rimraf .nyc_output coverage dist && git checkout FEM/00-scratch",
+    "setup:fem": "git checkout FEM/10.1-docs && npm install && npm run validate && rimraf .nyc_output coverage dist .git/hooks && git checkout FEM/00-scratch",
     "setup:egghead": "npm run setup && rimraf dist coverage && git checkout lesson/02-setting-up-github",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
