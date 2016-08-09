@@ -1,7 +1,7 @@
 {
-  "name": "starwars-names",
+  "name": "startrek-alien-races",
   "version": "0.0.0-semantically-released",
-  "description": "Get random Star Wars names",
+  "description": "Get random Star Trek alien races",
   "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
@@ -18,18 +18,17 @@
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "validate": "npm run cover && npm run check-coverage",
     "setup": "npm install && npm run validate",
-    "setup:fem": "git checkout FEM/10.1-docs && npm install && npm run validate && rimraf .nyc_output coverage dist .git/hooks && git checkout FEM/00-scratch",
-    "setup:egghead": "npm run setup && rimraf dist coverage && git checkout lesson/02-setting-up-github",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kentcdodds/starwars-names.git"
+    "url": "https://github.com/btribble/startrek-alien-races"
   },
   "keywords": [
     "random",
     "star",
-    "wars"
+    "trek",
+    "alien"
   ],
   "files": [
     "dist",
@@ -38,9 +37,9 @@
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kentcdodds/starwars-names/issues"
+    "url": "https://github.com/btribble/startrek-alien-races/issues"
   },
-  "homepage": "https://github.com/kentcdodds/starwars-names#readme",
+  "homepage": "https://github.com/btribble/startrek-alien-races#readme",
   "dependencies": {
     "unique-random-array": "1.0.0"
   },
