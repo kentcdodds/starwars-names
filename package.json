@@ -1,7 +1,7 @@
 {
-  "name": "starwars-names",
+  "name": "mybooks-names",
   "version": "1.0.0",
-  "description": "Get random Star Wars names",
+  "description": "Get random book names",
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kentcdodds/starwars-names.git"
+    "url": "git+https://github.com/nontivillu/mybooks-names.git"
   },
   "keywords": [
     "random",
@@ -22,12 +22,12 @@
   "files": [
     "dist"
   ],
-  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "author": "Nisha Prabhakaran <nisha.prabhakaran@hotmail.com> ",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kentcdodds/starwars-names/issues"
+    "url": "https://github.com/nontivillu/mybooks-names/issues"
   },
-  "homepage": "https://github.com/kentcdodds/starwars-names#readme",
+  "homepage": "https://github.com/nontivillu/mybooks-names#readme",
   "dependencies": {
     "unique-random-array": "1.0.0"
   },
