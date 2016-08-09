@@ -1,6 +1,6 @@
 {
   "name": "github-names",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Get random GitHub usernames",
   "main": "dist/index.js",
   "scripts": {
