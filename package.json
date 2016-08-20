@@ -63,6 +63,10 @@
     "semantic-release": "^4.2.1",
     "webpack": "1.13.1"
   },
+  "engines": {
+    "node": "6.x",
+    "npm": "3.x"
+  },
   "config": {
     "ghooks": {
       "pre-commit": "npm run validate"
@@ -71,6 +75,7 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
+  
   "babel": {
     "presets": [
       "es2015",
