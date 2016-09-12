@@ -10,7 +10,7 @@
     "start": "npm run test",
     "watch:test": "npm t -- --watch",
     "test": "mocha src/index.test.js --compilers js:babel-register",
-    "cover": "nyc npm t",
+    "cover": "nyc --reporter=lcov npm t",
     "prebuild": "rimraf dist",
     "build": "npm-run-all --parallel build:*",
     "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
