@@ -8,10 +8,6 @@ branches:
     - master
 notifications:
   email: false
-node_js:
-  - 4
-before_install:
-  - npm i -g npm@^3.0.0
 before_script:
   - npm prune
 script:
