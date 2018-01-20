@@ -1,13 +1,13 @@
 import {expect} from 'chai'
-import starWarsNames from '.'
+import pokemonNamesGen from '.'
 
-describe('starwars-names', () => {
+describe('pokemon-names-gen', () => {
   it('should have a list of all available names', () => {
-    expect(starWarsNames.all).to.satisfy(isArrayOfStrings)
+    expect(pokemonNamesGen.all).to.satisfy(isArrayOfStrings)
   })
 
   it('should allow me to get a random name from the list', () => {
-    expect(starWarsNames.random()).to.satisfy(isIncludedIn(starWarsNames.all))
+    expect(pokemonNamesGen.random()).to.satisfy(isIncludedIn(pokemonNamesGen.all))
   })
 })
 
