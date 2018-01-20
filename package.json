@@ -1,5 +1,5 @@
 {
-  "name": "starwars-names",
+  "name": "pokemon-names-gen",
   "version": "0.0.0-semantically-released",
   "description": "Get random Star Wars names",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kentcdodds/starwars-names.git"
+    "url": "git+https://github.com/ravinaenu/pokemon-names-gen.git"
   },
   "keywords": [
     "random",
@@ -28,12 +28,12 @@
   "files": [
     "dist"
   ],
-  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://ravinaenu.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kentcdodds/starwars-names/issues"
+    "url": "https://github.com/ravinaenu/pokemon-names-gen/issues"
   },
-  "homepage": "https://github.com/kentcdodds/starwars-names#readme",
+  "homepage": "https://github.com/ravinaenu/pokemon-names-gen#readme",
   "dependencies": {
     "unique-random-array": "1.0.0"
   },

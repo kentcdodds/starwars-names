@@ -1,6 +1,6 @@
-# starwars-names
+# pokemon-names-gen
 
-Get random star wars character names
+Get random pokemon character names
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
@@ -16,12 +16,12 @@ Get random star wars character names
 ## The problem
 
 You're writing tests and need to come up with the name of your user stub. Why waste
-time hard-coding `'John Doe'` again when you could use `'Count Dooku'` or
-`'Qui-Gon Jinn'`? Using Star Wars characters makes your tests much more interesting.
+time hard-coding `'John Doe'` again when you could use `'Pikachu'` or
+`'Squirtel'`? Using Pokemon characters makes your tests much more interesting.
 
 ## This solution
 
-This module has ~100 Star Wars character names and exposes an API for you to get a
+This module has ~100 Pokemon character names and exposes an API for you to get a
 random one every time you call it.
 
 ## Installation
@@ -36,10 +36,10 @@ npm install --save starwars-names
 Alternatively you can get the [UMD][umd] build which is also published to the npm
 registry and is therefore available via [npmcdn.com][npmcdn]:
 
-- [https://npmcdn.com/starwars-names@1.6.0/dist/index.umd.js][npmcdn-link]
-- [https://npmcdn.com/starwars-names@1.6.0/dist/index.umd.min.js][npmcdn-min-link]
+- [https://npmcdn.com/pokemon-names-gen@1.6.0/dist/index.umd.js][npmcdn-link]
+- [https://npmcdn.com/pokemon-names-gen@1.6.0/dist/index.umd.min.js][npmcdn-min-link]
 
-The UMD build exposes the module as a global called `starWarsNames` or as an unnamed
+The UMD build exposes the module as a global called `pokemonNamesGen` or as an unnamed
 module for AMD/CommonJS (require it by its file path)
 
 ## Usage
