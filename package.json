@@ -1,5 +1,5 @@
 {
-  "name": "kk-planet-names",
+  "name": "kkplanetnames",
   "version": "1.0.0",
   "description": "Get random Star Wars names",
   "main": "dist/index.js",
