@@ -1,3 +1,3 @@
-# starwars-names
+# KK_PLANET_NAMES
 
-For all your random Star Wars character needs
+For all your random Planet names
