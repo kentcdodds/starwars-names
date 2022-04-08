@@ -4,13 +4,13 @@
     "node": true,
   },
   "extends": [
-    "kentcdodds/best-practices",
-    "kentcdodds/possible-errors",
-    "kentcdodds/es6/best-practices",
-    "kentcdodds/es6/possible-errors",
-    "kentcdodds/import/best-practices",
-    "kentcdodds/import/possible-errors",
-    "kentcdodds/mocha"
+    "ProgramingMaster/best-practices",
+    "ProgramingMaster/possible-errors",
+    "ProgramingMaster/es6/best-practices",
+    "ProgramingMaster/es6/possible-errors",
+    "ProgramingMaster/import/best-practices",
+    "ProgramingMaster/import/possible-errors",
+    "ProgramingMaster/mocha"
   ],
   "rules": {},
 }

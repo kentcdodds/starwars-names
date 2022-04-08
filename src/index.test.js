@@ -1,7 +1,7 @@
 import {expect} from 'chai'
 import starWarsNames from '.'
 
-describe('starwars-names', () => {
+describe('book-name-generator', () => {
   it('should have a list of all available names', () => {
     expect(starWarsNames.all).to.satisfy(isArrayOfStrings)
   })
